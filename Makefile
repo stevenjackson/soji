@@ -28,3 +28,13 @@ configure_prompt:
 
 clean: prepare_for_tests
 
+c_tests:
+	mkdir -p build
+	rm -f build/c_tests
+	gcc -o build/c_tests utils.c tests.c -I.
+	build/c_tests
+
+c_build:
+	mkdir -p build
+	rm -f build/soji
+	gcc -o build/soji soji.c utils.c -I.
