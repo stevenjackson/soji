@@ -13,7 +13,6 @@ if [ "$os_x" != "" ]; then
         fi
     fi
 else
-    echo "Linux"
     if [ -e $(soji note-path log) ]; then
         task=`cat $(soji note-path log) | egrep "^\*\* (start|break|lunch|meditation|meeting)" | tail -1 | sed 's/[^-]*-- //' | sed 's/\(.*\) --.*/\1/' |  awk -F '' '{if (NF > 20) {print substr($0, 0, 21)"..."} else print $0}'`
         task=`echo $task | xargs`
