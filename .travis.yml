@@ -19,3 +19,4 @@ before_install:
   
 script:
   - sudo sh install_soji
+  - make test
