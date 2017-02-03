@@ -5,7 +5,9 @@ os_x=`uname -a | fgrep -i 'Darwin'`
 #echo $os_x
 
 if [ "$os_x" != "" ]; then
-    /usr/local/bin/brightness -m 0.8
+    #/usr/local/bin/brightness -m 0.8
+    afplay ~/Library/Sounds/AirHorn.aiff
+    say -v Anna "Back to work"
 else
     for disp in `DISPLAY=:0 xrandr --verbose | grep '(normal' | cut -d' ' -f 1`; do
         DISPLAY=:0 xrandr --output $disp --display ":0" --brightness 1 || true
